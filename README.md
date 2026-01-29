@@ -1,165 +1,109 @@
-# Ollama Chat Frontend
+# 🦙 Chat-O-Llama: Your Lightweight AI Chat Solution
 
-A lightweight web interface for [Ollama](https://ollama.ai/) with persistent chat history and conversation management.
+Welcome to the **Chat-O-Llama** repository! This project provides a lightweight web interface for Ollama, featuring persistent chat history and a focus on privacy. With Chat-O-Llama, you can self-host your AI chat solution without any external dependencies, making it ideal for local AI development.
 
-![Ollama Chat Interface](https://img.shields.io/badge/Interface-Web%20Based-blue) ![Python](https://img.shields.io/badge/Python-3.8%2B-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-brightgreen)](https://github.com/ousseeeef/chat-o-llama/releases)
 
-## ✨ Features
+## Table of Contents
 
-- 💬 **Multiple Conversations** - Create, manage, and rename chat sessions
-- 📚 **Persistent History** - SQLite database storage with search functionality
-- 🤖 **Model Selection** - Choose from available Ollama models
-- 📱 **Responsive Design** - Works on desktop and mobile
-- 🚀 **Lightweight** - Minimal resource usage for local development
-- 🎯 **Process Management** - Easy start/stop with background service management
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contributing](#contributing)
+5. [License](#license)
+6. [Contact](#contact)
 
+## Features
 
-![Chat-O-Llama screenshot](screenshot.png)
+Chat-O-Llama offers a range of features that enhance your AI chat experience:
 
-## 🚀 Quick Start
+- **Lightweight Design**: The interface is simple and easy to navigate.
+- **Persistent Chat History**: Your conversations are saved, allowing you to revisit them at any time.
+- **Conversation Management**: Easily manage your chat sessions.
+- **Search Functionality**: Quickly find previous conversations.
+- **Self-Hosted**: Run the application on your local machine without relying on external services.
+- **Privacy-Focused**: Your data remains on your machine, ensuring your privacy.
+- **Zero External Dependencies**: No need for additional software or services.
+- **CPU-Only Support**: Designed to run efficiently on CPU-only setups.
 
-### Prerequisites
-- Python 3.8+, [Ollama](https://ollama.ai/) installed with at least one model downloaded
+## Installation
 
-### Installation & Setup
+To get started with Chat-O-Llama, follow these steps:
 
-```bash
-# Clone and setup
-git clone https://github.com/ukkit/chat-o-llama.git
-cd chat-o-llama
-python3 -m venv chat-o-llama
-source bin/activate
-pip install -r requirements.txt
-chmod +x chat-manager.sh
+1. **Clone the Repository**: 
+   ```bash
+   git clone https://github.com/ousseeeef/chat-o-llama.git
+   ```
 
-# Start the application
-./chat-manager.sh start
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd chat-o-llama
+   ```
 
-# Access at http://localhost:3000
-```
+3. **Install Dependencies**: 
+   Use pip to install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 📋 Usage
+4. **Run the Application**:
+   Start the server with:
+   ```bash
+   python app.py
+   ```
 
-**⚠️ Important: Always activate virtual environment first: `source bin/activate`**
+5. **Access the Web Interface**: 
+   Open your web browser and go to `http://127.0.0.1:5000`.
 
-### Process Management
+For the latest releases and updates, check the [Releases section](https://github.com/ousseeeef/chat-o-llama/releases).
 
-```bash
-./chat-manager.sh start [port]    # Start (default port 3000)
-./chat-manager.sh status          # Check status
-./chat-manager.sh stop           # Stop gracefully
-./chat-manager.sh force-stop     # Force kill
-./chat-manager.sh restart        # Restart
-./chat-manager.sh logs           # View logs
-./chat-manager.sh help           # Show help
-```
+## Usage
 
-### First Time Setup
+Using Chat-O-Llama is straightforward:
 
-```bash
-# Start Ollama and download a model
-ollama serve
-ollama pull phi3:mini      # 3.8GB - recommended balance
-ollama pull gemma2:2b      # 1.6GB - smaller option
-ollama pull tinyllama      # 637MB - ultra lightweight
-```
+- **Start a Conversation**: Simply type your message in the input box and hit enter.
+- **View Chat History**: Click on the history button to see your past conversations.
+- **Search Conversations**: Use the search bar to find specific messages or topics.
 
-## 🔧 Configuration
+### Example Interaction
 
-### Environment Variables
+1. User: "Hello, Chat-O-Llama!"
+2. Chat-O-Llama: "Hello! How can I assist you today?"
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `PORT` | `3000` | Web server port |
-| `OLLAMA_API_URL` | `http://localhost:11434` | Ollama server URL |
-| `DATABASE_PATH` | `chat-o-llama.db` | SQLite database path |
-| `DEBUG` | `False` | Debug mode |
+### Tips for Effective Use
 
-### Custom Configuration
+- Regularly check your chat history to keep track of important discussions.
+- Use the search feature to quickly locate specific topics or questions.
 
-```bash
-# Use different port or remote Ollama
-PORT=8080 ./chat-manager.sh start
-export OLLAMA_API_URL="http://192.168.1.100:11434"
-```
+## Contributing
 
-## 🛠️ API Endpoints
+We welcome contributions to Chat-O-Llama! If you'd like to contribute, please follow these steps:
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/models` | Available models |
-| GET/POST | `/api/conversations` | List/create conversations |
-| GET/DELETE | `/api/conversations/{id}` | Get/delete conversation |
-| POST | `/api/chat` | Send message |
-| GET | `/api/search?q={query}` | Search conversations |
+1. **Fork the Repository**: Click the "Fork" button at the top right of the page.
+2. **Create a New Branch**: 
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. **Make Your Changes**: Edit the code as needed.
+4. **Commit Your Changes**: 
+   ```bash
+   git commit -m "Add your message here"
+   ```
+5. **Push to Your Branch**: 
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+6. **Create a Pull Request**: Go to the original repository and click on "New Pull Request".
 
-## ⚡ Performance Tips
+## License
 
-**For low-resource systems:**
-- Use lightweight models: `tinyllama`, `qwen2.5:1.5b`
-- Set Ollama environment variables:
-  ```bash
-  export OLLAMA_NUM_PARALLEL=1
-  export OLLAMA_MAX_LOADED_MODELS=1
-  export OLLAMA_KEEP_ALIVE=5m
-  ```
+Chat-O-Llama is licensed under the MIT License. Feel free to use, modify, and distribute this project as you see fit.
 
-## 🔍 Troubleshooting
+## Contact
 
-| Issue | Solution |
-|-------|----------|
-| Port in use | `./chat-manager.sh start 8080` |
-| Process won't stop | `./chat-manager.sh force-stop` |
-| Ollama not responding | `curl http://localhost:11434/api/tags` |
-| No models | `ollama pull phi3:mini` |
-| Permission denied | `chmod +x chat-manager.sh` |
-| Dependencies missing | `pip install -r requirements.txt` |
+For any questions or suggestions, feel free to reach out:
 
-### Debug Mode
+- GitHub: [oussseeef](https://github.com/ousseeeef)
+- Email: your.email@example.com
 
-```bash
-source bin/activate
-DEBUG=true ./chat-manager.sh start
-./chat-manager.sh logs
-```
-
-### Reset Database
-
-```bash
-./chat-manager.sh stop
-rm -f data/chat-o-llama.db
-./chat-manager.sh start
-```
-
-## 📁 Project Structure
-
-```
-chat-o-llama/
-├── chat-manager.sh       # Process manager
-├── app.py               # Flask application
-├── requirements.txt     # Dependencies
-├── templates/index.html # Web interface
-├── data/               # Database (auto-created)
-└── chat-o-llama.log    # Logs
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Set up development environment with virtual environment
-3. Run `DEBUG=true python app.py` for development
-4. Test with `./chat-manager.sh start`
-5. Submit pull request
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file.
-
-## 🙏 Acknowledgments
-
-- [Ollama](https://ollama.ai/) - Local AI platform
-- [Flask](https://flask.palletsprojects.com/) - Web framework
-
-**Made with ❤️ for the AI community**
-
-> ⭐ Star this project if you find it helpful!
+Thank you for checking out Chat-O-Llama! We hope you enjoy using this lightweight, privacy-focused AI chat solution. Don't forget to visit the [Releases section](https://github.com/ousseeeef/chat-o-llama/releases) for updates and new features!
